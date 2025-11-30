@@ -50,9 +50,8 @@ hayonerobotは、あなたが設定した時間を過ぎたら「早く寝ろ!�
 #### CIで実行されるチェック
 
 1. **コードフォーマット** - `cargo fmt`でコードスタイルをチェック
-2. **Dioxusフォーマット** - `dx fmt`でDioxus固有のスタイルをチェック
-3. **Linting** - `cargo clippy`でコード品質をチェック
-4. **テスト実行** - `cargo test`で全テストを実行
+2. **Linting** - `cargo clippy`でコード品質をチェック
+3. **テスト実行** - `cargo test`で全テストを実行
 
 #### PRを作成する前に
 
@@ -61,7 +60,6 @@ hayonerobotは、あなたが設定した時間を過ぎたら「早く寝ろ!�
 ```bash
 # フォーマットチェック
 cargo fmt --all --check
-dx fmt --all --check
 
 # Lintチェック
 cargo clippy --workspace --all-targets --all-features -- -D warnings

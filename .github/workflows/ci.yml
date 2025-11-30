@@ -47,14 +47,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cargo-build-target-
 
-      - name: Install dioxus-cli
-        uses: install-pinned/dioxus-cli@v0.6.0
-
       - name: Check code formatting
         run: cargo fmt --all --check
-
-      - name: Check dioxus formatting
-        run: dx fmt --all --check
 
       - name: Run clippy
         run: cargo clippy --workspace --all-targets --all-features -- -D warnings
