@@ -21,7 +21,7 @@ jobs:
       # cargo はデフォルトで使えるが、clippyでエラーになるので、rust-toolchainをインストールする
       - uses: dtolnay/rust-toolchain@stable
         with:
-          components: rustfmt, clippy, check, test
+          components: rustfmt, clippy
 
       - name: Check code formatting
         run: cargo fmt --all --check
