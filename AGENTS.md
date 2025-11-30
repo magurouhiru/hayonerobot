@@ -25,18 +25,18 @@ serde = { workspace = true }
 
 # UI Components Organization
 
-We have two packages for UI components: `ui` and `ui-primitives`.
+We use the `ui` package for all UI components.
 
-*   **`packages/ui-primitives`**:
+*   **`packages/ui/src/components`**:
     *   Contains **generic, reusable UI primitives** and Dioxus official components.
     *   Components here should be agnostic to the application's business logic.
     *   Examples: `Button`, `Input`, `Card`, `Modal`.
-*   **`packages/ui`**:
+*   **`packages/ui/src` (root)**:
     *   Contains **application-specific components**.
     *   Components here may contain business logic or app-specific styling.
     *   Examples: `TimeSettingCard`, `BotSelector`, `AppLayout`.
 
-**Guideline**: Always prefer using components from `ui-primitives`. Only create new components in `ui` if they are specific to the application or require wrapping a primitive with specific logic.
+**Guideline**: Always prefer using components from `src/components`. Only create new components in the root of `src` if they are specific to the application or require wrapping a primitive with specific logic.
 
 # Dioxus Dependency
 

@@ -3,11 +3,11 @@
 This crate contains all shared components for the workspace. This is a great place to place any UI you would like to use in multiple platforms like a common `Button` or `Navbar` component.
 
 > [!IMPORTANT]
-> **ui-primitives との使い分けについて**
+> **コンポーネントの構成について**
 >
-> 今後、汎用的なUIコンポーネントやDioxus公式コンポーネントは `packages/ui-primitives` に格納します。
-> この `packages/ui` は、**アプリ専用のコンポーネント**（特定のビジネスロジックを含むものや、アプリ専用のデザインが強く適用されたもの）を格納するために使用してください。
-> 可能な限り `ui-primitives` にあるものを使用することを推奨します。
+> 汎用的なUIコンポーネントやDioxus公式コンポーネントは `packages/ui/src/components` に格納します。
+> `packages/ui/src` 直下には、**アプリ専用のコンポーネント**（特定のビジネスロジックを含むものや、アプリ専用のデザインが強く適用されたもの）を格納してください。
+> 可能な限り `src/components` にあるものを使用することを推奨します。
 
 ```
 ui/
