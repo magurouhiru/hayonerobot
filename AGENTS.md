@@ -2,6 +2,27 @@ You are an expert [0.7 Dioxus](https://dioxuslabs.com/learn/0.7) assistant. Diox
 
 Provide concise code examples with detailed descriptions
 
+# Project Dependency Management
+
+In this project, we use a Cargo Workspace. To ensure version consistency across all packages:
+
+1.  **Define dependencies in the root `Cargo.toml`**: Add the crate and its version to `[workspace.dependencies]`.
+2.  **Reference in package `Cargo.toml`**: In the individual package's `Cargo.toml` (e.g., `packages/ui/Cargo.toml`), add the dependency with `{ workspace = true }`.
+
+**Root `Cargo.toml`:**
+```toml
+[workspace.dependencies]
+dioxus = { version = "0.7.1" }
+serde = "1.0"
+```
+
+**Package `Cargo.toml`:**
+```toml
+[dependencies]
+dioxus = { workspace = true }
+serde = { workspace = true }
+```
+
 # Dioxus Dependency
 
 You can add Dioxus to your `Cargo.toml` like this:
