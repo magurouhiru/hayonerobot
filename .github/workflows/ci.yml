@@ -13,11 +13,9 @@ env:
 jobs:
   check:
     name: Check
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     steps:
-      # dioxus のciからコピペ
-      - name: Install dependencies
-        uses: awalsh128/cache-apt-pkgs-action@latest
+      - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: libwebkit2gtk-4.1-dev libgtk-3-dev libayatana-appindicator3-dev libxdo-dev
           version: 1.0
@@ -30,6 +28,9 @@ jobs:
 
       - name: Run clippy
         run: cargo clippy --workspace --all-targets --all-features -- -D warnings
+
+      - name: Check workspace
+        run: cargo check --workspace --all-targets --all-features
 
       - name: Run tests
         run: cargo test --workspace --all-features
