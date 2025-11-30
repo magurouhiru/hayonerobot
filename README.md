@@ -43,6 +43,33 @@ hayonerobotは、あなたが設定した時間を過ぎたら「早く寝ろ!�
 
 ## 開発者向け情報
 
+### CI/CD
+
+このプロジェクトはGitHub Actionsを使用してPull Request時に自動的にCIを実行します。
+
+#### CIで実行されるチェック
+
+1. **コードフォーマット** - `cargo fmt`でコードスタイルをチェック
+2. **Linting** - `cargo clippy`でコード品質をチェック
+3. **テスト実行** - `cargo test`で全テストを実行
+
+#### PRを作成する前に
+
+ローカルで以下のコマンドを実行して、CIが通ることを確認してください:
+
+```bash
+# フォーマットチェック
+cargo fmt --all --check
+
+# Lintチェック
+cargo clippy --workspace --all-targets --all-features -- -D warnings
+
+# テスト実行
+cargo test --workspace --all-features
+```
+
+---
+
 This workspace contains standalone bundles for web, desktop, and mobile platforms. Each platform runs independently without requiring a server. The workspace includes:
 
 - **Platform crates** (`web`, `desktop`, `mobile`): Platform-specific entry points and UI
