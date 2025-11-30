@@ -60,7 +60,7 @@ hayonerobotは、あなたが設定した時間を過ぎたら「早く寝ろ!�
 
 ```bash
 # フォーマットチェック
-cargo fmt --all -- --check
+cargo fmt --all --check
 dx fmt --all --check
 
 # Lintチェック

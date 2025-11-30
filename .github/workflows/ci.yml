@@ -51,7 +51,7 @@ jobs:
         uses: install-pinned/dioxus-cli@v0.6.0
 
       - name: Check code formatting
-        run: cargo fmt --all -- --check
+        run: cargo fmt --all --check
 
       - name: Check dioxus formatting
         run: dx fmt --all --check
