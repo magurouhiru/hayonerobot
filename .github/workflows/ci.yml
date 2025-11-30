@@ -18,12 +18,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
 
-      # cargo はデフォルトで使えるが、clippyでエラーになるので、cargo-binstall経由でインストールする
-      - name: Install cargo-binstall
-        run: cargo install cargo-binstall
-
-      - name: Install clippy
-        run: cargo binstall clippy
+      - name: Install fmt clippy
+        run: rustup component add rustfmt clippy
 
       - name: Check code formatting
         run: cargo fmt --all --check
