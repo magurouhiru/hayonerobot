@@ -23,6 +23,21 @@ dioxus = { workspace = true }
 serde = { workspace = true }
 ```
 
+# UI Components Organization
+
+We have two packages for UI components: `ui` and `ui-primitives`.
+
+*   **`packages/ui-primitives`**:
+    *   Contains **generic, reusable UI primitives** and Dioxus official components.
+    *   Components here should be agnostic to the application's business logic.
+    *   Examples: `Button`, `Input`, `Card`, `Modal`.
+*   **`packages/ui`**:
+    *   Contains **application-specific components**.
+    *   Components here may contain business logic or app-specific styling.
+    *   Examples: `TimeSettingCard`, `BotSelector`, `AppLayout`.
+
+**Guideline**: Always prefer using components from `ui-primitives`. Only create new components in `ui` if they are specific to the application or require wrapping a primitive with specific logic.
+
 # Dioxus Dependency
 
 You can add Dioxus to your `Cargo.toml` like this:
