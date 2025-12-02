@@ -5,3 +5,4 @@ pub mod input;
 pub mod navbar;
 pub mod switch;
 pub mod tabs;
+pub mod label;
