@@ -40,33 +40,35 @@ body {
 }
 
 :root {
-  /* Primary colors */
-  --primary-color: var(--dark, #000) var(--light, #fff);
-  --primary-color-1: var(--dark, #0e0e0e) var(--light, #fbfbfb);
-  --primary-color-2: var(--dark, #0a0a0a) var(--light, #fff);
-  --primary-color-3: var(--dark, #141313) var(--light, #f8f8f8);
-  --primary-color-4: var(--dark, #1a1a1a) var(--light, #f8f8f8);
-  --primary-color-5: var(--dark, #262626) var(--light, #f5f5f5);
-  --primary-color-6: var(--dark, #232323) var(--light, #e5e5e5);
-  --primary-color-7: var(--dark, #3e3e3e) var(--light, #b0b0b0);
+  /* Primary colors - 親しみやすい温かみのある色合い */
+  /* Light mode: 柔らかいベージュ/クリーム系 | Dark mode: 深い青みがかったグレー */
+  --primary-color: var(--dark, #1a1d2e) var(--light, #faf8f3);
+  --primary-color-1: var(--dark, #212538) var(--light, #f5f2ea);
+  --primary-color-2: var(--dark, #1e2235) var(--light, #fffef9);
+  --primary-color-3: var(--dark, #252a3f) var(--light, #f0ebe0);
+  --primary-color-4: var(--dark, #2a2f47) var(--light, #ebe5d8);
+  --primary-color-5: var(--dark, #323854) var(--light, #e6dfd0);
+  --primary-color-6: var(--dark, #3a4060) var(--light, #d4c9b3);
+  --primary-color-7: var(--dark, #4a5270) var(--light, #a89a7e);
 
-  /* Secondary colors */
-  --secondary-color: var(--dark, #fff) var(--light, #000);
-  --secondary-color-1: var(--dark, #fafafa) var(--light, #000);
-  --secondary-color-2: var(--dark, #e6e6e6) var(--light, #0d0d0d);
-  --secondary-color-3: var(--dark, #dcdcdc) var(--light, #2b2b2b);
-  --secondary-color-4: var(--dark, #d4d4d4) var(--light, #111);
-  --secondary-color-5: var(--dark, #a1a1a1) var(--light, #848484);
-  --secondary-color-6: var(--dark, #5d5d5d) var(--light, #d0d0d0);
+  /* Secondary colors - テキストカラー */
+  /* Light mode: 温かみのあるブラウン系 | Dark mode: 柔らかいオフホワイト */
+  --secondary-color: var(--dark, #f5f3ef) var(--light, #3d3428);
+  --secondary-color-1: var(--dark, #f0ede8) var(--light, #3d3428);
+  --secondary-color-2: var(--dark, #e8e4dd) var(--light, #4a3f30);
+  --secondary-color-3: var(--dark, #d9d4cb) var(--light, #5c4d3a);
+  --secondary-color-4: var(--dark, #cdc7bc) var(--light, #3d3428);
+  --secondary-color-5: var(--dark, #9a9388) var(--light, #8a7a65);
+  --secondary-color-6: var(--dark, #6b6459) var(--light, #b5a890);
 
-  /* Highlight colors */
-  --focused-border-color: var(--dark, #2b7fff) var(--light, #2b7fff);
-  --primary-success-color: var(--dark, #02271c) var(--light, #ecfdf5);
-  --secondary-success-color: var(--dark, #b6fae3) var(--light, #10b981);
-  --primary-warning-color: var(--dark, #342203) var(--light, #fffbeb);
-  --secondary-warning-color: var(--dark, #feeac7) var(--light, #f59e0b);
-  --primary-error-color: var(--dark, #a22e2e) var(--light, #dc2626);
-  --secondary-error-color: var(--dark, #9b1c1c) var(--light, #ef4444);
+  /* Highlight colors - より親しみやすいアクセントカラー */
+  --focused-border-color: var(--dark, #5b9fff) var(--light, #4a8fe7);
+  --primary-success-color: var(--dark, #1a3d2e) var(--light, #e8f5e9);
+  --secondary-success-color: var(--dark, #81c995) var(--light, #4caf50);
+  --primary-warning-color: var(--dark, #4a3520) var(--light, #fff8e1);
+  --secondary-warning-color: var(--dark, #ffb74d) var(--light, #ff9800);
+  --primary-error-color: var(--dark, #c55a5a) var(--light, #e57373);
+  --secondary-error-color: var(--dark, #b54545) var(--light, #f44336);
   --contrast-error-color: var(--dark, var(--secondary-color-3)) var(--light, var(--primary-color));
   --primary-info-color: var(--dark, var(--primary-color-5)) var(--light, var(--primary-color));
   --secondary-info-color: var(--dark, var(--primary-color-7)) var(--light, var(--secondary-color-3));
