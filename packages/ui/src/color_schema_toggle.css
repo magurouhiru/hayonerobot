@@ -1,0 +1,33 @@
+/* ColorSchemaToggle specific styles */
+.color-schema-toggle-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    background-color: var(--light, rgba(0, 0, 0, 0.05)) var(--dark, rgba(255, 255, 255, 0.05));
+    transition: background-color 200ms;
+}
+
+.color-schema-toggle-container:hover {
+    background-color: var(--light, rgba(0, 0, 0, 0.08)) var(--dark, rgba(255, 255, 255, 0.08));
+}
+
+.color-schema-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    user-select: none;
+    transition: opacity 200ms, transform 200ms;
+}
+
+.sun-icon {
+    opacity: var(--light, 1) var(--dark, 0.4);
+}
+
+.moon-icon {
+    opacity: var(--light, 0.4) var(--dark, 1);
+}
+
+.color-schema-toggle-container:hover .color-schema-icon {
+    transform: scale(1.1);
+}

@@ -33,26 +33,31 @@ pub fn ColorSchemaToggle() -> Element {
     });
 
     rsx! {
-        Switch {
-            checked: is_dark(),
-            aria_label: "Toggle Dark/Light Mode",
-            on_checked_change: move |new_checked| {
-                is_dark.set(new_checked);
+        document::Link { rel: "stylesheet", href: asset!("./color_schema_toggle.css") }
+        div { class: "color-schema-toggle-container",
+            span { class: "color-schema-icon sun-icon", "☀️" }
+            Switch {
+                checked: is_dark(),
+                aria_label: "Toggle Dark/Light Mode",
+                on_checked_change: move |new_checked| {
+                    is_dark.set(new_checked);
 
-                // Update theme in DOM and localStorage
-                let theme = if new_checked { "dark" } else { "light" };
-                spawn(async move {
-                    let _ = document::eval(
-                            &format!(
-                                "document.documentElement.setAttribute('data-theme', '{}');localStorage.setItem('theme', '{}');",
-                                theme,
-                                theme,
-                            ),
-                        )
-                        .await;
-                });
-            },
-            SwitchThumb {}
+                    // Update theme in DOM and localStorage
+                    let theme = if new_checked { "dark" } else { "light" };
+                    spawn(async move {
+                        let _ = document::eval(
+                                &format!(
+                                    "document.documentElement.setAttribute('data-theme', '{}');localStorage.setItem('theme', '{}');",
+                                    theme,
+                                    theme,
+                                ),
+                            )
+                            .await;
+                    });
+                },
+                SwitchThumb {}
+            }
+            span { class: "color-schema-icon moon-icon", "🌙" }
         }
     }
 }
