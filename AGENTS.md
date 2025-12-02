@@ -35,8 +35,13 @@ We use the `ui` package for all UI components.
     *   Contains **application-specific components**.
     *   Components here may contain business logic or app-specific styling.
     *   Examples: `TimeSettingCard`, `BotSelector`, `AppLayout`.
+*   **`packages/ui/src/demo`**:
+    *   Contains **usage examples for each component** in `src/components`.
+    *   Each demo file shows how to use the corresponding component with various props and configurations.
+    *   **Always refer to these demos when using a component** to understand proper usage patterns.
+    *   All demos can be viewed together via the `ui::demo::Demo` component.
 
-**Guideline**: Always prefer using components from `src/components`. Only create new components in the root of `src` if they are specific to the application or require wrapping a primitive with specific logic.
+**Guideline**: Always prefer using components from `src/components`. Only create new components in the root of `src` if they are specific to the application or require wrapping a primitive with specific logic. When using a component, check the corresponding demo file in `src/demo` for usage examples.
 
 # Dioxus Dependency
 

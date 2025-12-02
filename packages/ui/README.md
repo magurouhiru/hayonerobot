@@ -9,6 +9,22 @@ This crate contains all shared components for the workspace. This is a great pla
 > `packages/ui/src` 直下には、**アプリ専用のコンポーネント**（特定のビジネスロジックを含むものや、アプリ専用のデザインが強く適用されたもの）を格納してください。
 > 可能な限り `src/components` にあるものを使用することを推奨します。
 
+## コンポーネントのデモ
+
+各コンポーネントの使用例は `packages/ui/src/demo` ディレクトリに格納されています。
+コンポーネントを使用する際は、対応するdemoファイルを参照してください。
+
+利用可能なデモ:
+- `demo/button.rs` - Buttonコンポーネントの各バリアント
+- `demo/card.rs` - Cardコンポーネントの使用例
+- `demo/input.rs` - Inputコンポーネントの使用例
+- `demo/label.rs` - Labelコンポーネントの使用例
+- `demo/navbar.rs` - Navbarコンポーネントの使用例
+- `demo/switch.rs` - Switchコンポーネントの使用例
+- `demo/tabs.rs` - Tabsコンポーネントの使用例
+
+すべてのデモは `ui::demo::Demo` コンポーネントから確認できます。
+
 ```
 ui/
 ├─ src/
