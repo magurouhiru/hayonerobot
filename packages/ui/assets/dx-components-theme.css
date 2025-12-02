@@ -28,6 +28,17 @@ body {
   }
 }
 
+/* Manual theme override - takes precedence over prefers-color-scheme */
+[data-theme="dark"] {
+  --dark: initial;
+  --light: ;
+}
+
+[data-theme="light"] {
+  --dark: ;
+  --light: initial;
+}
+
 :root {
   /* Primary colors */
   --primary-color: var(--dark, #000) var(--light, #fff);
