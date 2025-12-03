@@ -22,6 +22,7 @@ fn Layout() -> Element {
         Navbar {
             NavbarItem { index: 0usize, value: "Home", to: Route::Home {}, "Home" }
             NavbarItem { index: 1usize, value: "Showcase", to: Route::Showcase {}, "Showcase" }
+            NavbarItem { index: 2usize, value: "Setting", to: Route::Setting {}, "Setting" }
         }
         ColorSchemaToggle {}
         Outlet::<Route> {}
@@ -35,4 +36,6 @@ enum Route {
     Home {},
     #[route("/showcase")]
     Showcase {},
+    #[route("/setting")]
+    Setting {},
 }
