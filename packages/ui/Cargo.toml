@@ -6,3 +6,4 @@ edition = "2021"
 [dependencies]
 dioxus = { workspace = true }
 dioxus-primitives = { workspace = true }
+strum = { workspace = true }

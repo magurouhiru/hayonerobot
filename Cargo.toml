@@ -13,6 +13,7 @@ dioxus = { version = "0.7.1" }
 dioxus-primitives = { git = "https://github.com/DioxusLabs/components", version = "0.0.1", default-features = false, features = [
     "router",
 ] }
+strum = { version = "0.27.2", features = ["derive"] }
 
 # workspace
 ui = { path = "packages/ui" }

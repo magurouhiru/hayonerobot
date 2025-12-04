@@ -3,6 +3,7 @@ mod card;
 mod input;
 mod label;
 mod navbar;
+mod select;
 mod switch;
 mod tabs;
 
@@ -21,6 +22,7 @@ pub fn Demo() -> Element {
                 TabTrigger { value: "Navbar", index: 4usize, "Navbar" }
                 TabTrigger { value: "Switch", index: 5usize, "Switch" }
                 TabTrigger { value: "Tabs", index: 6usize, "Tabs" }
+                TabTrigger { value: "Select", index: 7usize, "Select" }
             }
             TabContent { index: 0usize, value: "Card", card::Demo {} }
             TabContent { index: 1usize, value: "Button", button::Demo {} }
@@ -29,6 +31,7 @@ pub fn Demo() -> Element {
             TabContent { index: 4usize, value: "Navbar", navbar::Demo {} }
             TabContent { index: 5usize, value: "Switch", switch::Demo {} }
             TabContent { index: 6usize, value: "Tabs", tabs::Demo {} }
+            TabContent { index: 7usize, value: "Select", select::Demo {} }
         }
     }
 }
