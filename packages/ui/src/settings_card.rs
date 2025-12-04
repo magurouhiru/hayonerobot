@@ -1,13 +1,11 @@
 use dioxus::prelude::*;
 
-use crate::components::{button::*, card::*, input::*, label::*, switch::*};
+use crate::components::{button::*, card::*, label::*, select::*, switch::*};
 
 #[component]
 pub fn SettingsCard() -> Element {
     // State for bedtime settings
     let mut bedtime_enabled = use_signal(|| false);
-    let mut bedtime_hour = use_signal(|| String::from("22"));
-    let mut bedtime_minute = use_signal(|| String::from("00"));
 
     // State for notification settings
     let mut notification_message = use_signal(|| true);
@@ -44,31 +42,61 @@ pub fn SettingsCard() -> Element {
 
                         if *bedtime_enabled.read() {
                             div { style: "display: flex; gap: 1rem; align-items: center; padding-left: 1rem;",
-                                div { style: "display: flex; flex-direction: column; gap: 0.5rem; flex: 1;",
+                                div { style: "display: flex; flex-direction: column; gap: 0.5rem;",
                                     Label { html_for: "bedtime-hour", "時" }
-                                    Input {
-                                        id: "bedtime-hour",
-                                        r#type: "number",
-                                        value: bedtime_hour,
-                                        oninput: move |e: FormEvent| bedtime_hour.set(e.value()),
-                                        min: "0",
-                                        max: "23",
-                                        step: "1",
+                                    Select::<String> {
+                                        placeholder: "時",
+                                        name: "bedtime-hour",
+                                        SelectTrigger { SelectValue {} }
+                                        SelectList {
+                                            {
+                                                (20..24)
+                                                    .map(|h| {
+                                                        let h_str = format!("{:02}", h);
+                                                        rsx! {
+                                                            SelectOption::<String> {
+                                                                index: h as usize,
+                                                                key: "{h_str}",
+                                                                value: h_str.clone(),
+                                                                text_value: h_str.clone(),
+                                                                "{h_str}"
+                                                                SelectItemIndicator {}
+                                                            }
+                                                        }
+                                                    })
+                                            }
+                                        }
                                     }
                                 }
                                 span { style: "padding-top: 1.5rem; font-size: 1.25rem;",
                                     ":"
                                 }
-                                div { style: "display: flex; flex-direction: column; gap: 0.5rem; flex: 1;",
+                                div { style: "display: flex; flex-direction: column; gap: 0.5rem;",
                                     Label { html_for: "bedtime-minute", "分" }
-                                    Input {
-                                        id: "bedtime-minute",
-                                        r#type: "number",
-                                        value: bedtime_minute,
-                                        oninput: move |e: FormEvent| bedtime_minute.set(e.value()),
-                                        min: "0",
-                                        max: "59",
-                                        step: "1",
+                                    Select::<String> {
+                                        placeholder: "分",
+                                        name: "bedtime-minute",
+                                        SelectTrigger { SelectValue {} }
+                                        SelectList {
+                                            {
+                                                ["00", "15", "30", "45"]
+                                                    .into_iter()
+                                                    .enumerate()
+                                                    .map(|(i, m)| {
+                                                        let m_str = m.to_string();
+                                                        rsx! {
+                                                            SelectOption::<String> {
+                                                                index: i,
+                                                                key: "{m_str}",
+                                                                value: m_str.clone(),
+                                                                text_value: m_str.clone(),
+                                                                "{m_str}"
+                                                                SelectItemIndicator {}
+                                                            }
+                                                        }
+                                                    })
+                                            }
+                                        }
                                     }
                                 }
                             }
